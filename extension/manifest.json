@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "TimeTracker",
+  "short_name": "TimeTracker",
+  "version": "0.1.0",
+  "description": "Future Chrome extension scaffold for quick task-based timers and Pomodoro flows.",
+  "permissions": ["storage", "alarms"],
+  "host_permissions": [],
+  "action": {
+    "default_title": "TimeTracker",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  }
+}

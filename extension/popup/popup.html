@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TimeTracker</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="hero">
+        <p class="eyebrow">TimeTracker</p>
+        <h1>Quick Focus</h1>
+        <p class="subtitle">
+          Extension scaffold for task-based timers, Pomodoro starts, and future backend sync.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Task picker</p>
+            <h2>Choose focus target</h2>
+          </div>
+          <span class="badge muted">Scaffold</span>
+        </div>
+
+        <label class="field">
+          <span>Task</span>
+          <select id="task-select">
+            <option value="task-1">Design dashboard layout</option>
+            <option value="task-5">Complete ML research paper</option>
+            <option value="task-3">Study quantum mechanics Chapter 5</option>
+            <option value="">Start without task</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Pomodoro presets</p>
+            <h2>Pick a cadence</h2>
+          </div>
+          <span class="badge">Future</span>
+        </div>
+
+        <div class="preset-grid">
+          <button type="button" class="preset is-active" data-preset="focus-25">
+            <strong>25 / 5</strong>
+            <span>Classic focus</span>
+          </button>
+          <button type="button" class="preset" data-preset="deep-work-50">
+            <strong>50 / 10</strong>
+            <span>Deep work</span>
+          </button>
+          <button type="button" class="preset" data-preset="custom">
+            <strong>Custom</strong>
+            <span>Eventually editable</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Timer state</p>
+            <h2>Ready to start</h2>
+          </div>
+          <span class="badge success">Idle</span>
+        </div>
+
+        <div class="timer-card">
+          <p class="timer-label">Selected preset</p>
+          <p id="timer-readout" class="timer-readout">25:00</p>
+          <p class="timer-hint">Background ownership and real countdown logic will live in the service worker.</p>
+        </div>
+
+        <div class="action-row">
+          <button type="button" class="action primary" data-action="start-timer">Start timer</button>
+          <button type="button" class="action secondary" data-action="stop-timer">Stop timer</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-kicker">Future sync</p>
+            <h2>Backend + calendar flow</h2>
+          </div>
+          <span class="badge muted">Planned</span>
+        </div>
+
+        <ul class="flow-list">
+          <li>Complete session locally in the background worker</li>
+          <li>Push session payload into the app backend</li>
+          <li>Optionally create or update a Google Calendar focus event later</li>
+        </ul>
+
+        <p id="status-text" class="status-text">
+          No live extension logic is wired yet. This popup is a structural scaffold only.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>
